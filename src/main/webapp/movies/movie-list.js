@@ -2,6 +2,10 @@ createMovie = () =>
     createMovie()
         .then(this.findAllMovies)
 
+deleteMovie = (id) =>
+    deleteMovie(id)
+        .then(this.findAllMovies)
+
 class MovieList extends React.Component {
 
     state = {
@@ -24,6 +28,12 @@ class MovieList extends React.Component {
                             <tr key={movie.id}>
                                 <td>
                                     {movie.title}
+                                </td>
+                                <td>
+                                    <button
+                                        onClick={() => this.deleteMovie(movie.id)}>
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         )
